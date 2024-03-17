@@ -4,16 +4,33 @@ import greenfoot.Actor;
 import greenfoot.Greenfoot;
 
 public class FigureSpawner extends Actor{
-    //TODO: nicht random, sondern in nem sack
     //TODO: noch eine vorschau für den nächsten Block
     int figureCount = 7;
     int blockSize = 26;
     BlockSpawner mommy;
+
+    int[] leftFiguresArr = new int[7];
+    int leftFiguresCounter = 0;
     
     public void generateFigure(BlockSpawner mommy) {
-        int figure = Greenfoot.getRandomNumber(figureCount);
+        int figure = generateRandomNumber();
         this.mommy = mommy;
         spawnFigure(figure);
+    }
+
+    private int generateRandomNumber() {
+        if (leftFiguresCounter == 0) {
+            leftFiguresCounter = 7;
+            int[] newArr = {1, 2, 3, 4, 5, 6, 7, 8};
+            leftFiguresArr = newArr.clone();
+        }
+        int outputNum = 0;
+        do {
+            outputNum = leftFiguresArr[Greenfoot.getRandomNumber(7)];
+        } while (outputNum == 0);
+        leftFiguresCounter--;
+        leftFiguresArr[outputNum - 1] = 0;
+        return outputNum - 1;
     }
     
     private void spawnFigure(int figure) {
