@@ -39,7 +39,6 @@ public class Figure1 extends Actor {
         if (checkSides) {
             checkSides = false;
             for (BlockForFigure b : figure) {
-                //b.setIngoreBlocks();
                 b.shouldMove = true;
             }
         }
@@ -53,7 +52,7 @@ public class Figure1 extends Actor {
     
     private void TestBlock() {
         int[] positions = {4, 4, 4, 4};
-        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions, mommy);
+        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions);
         int spawnX = (mommy.getWorld().getWidth() + blockSize) / 2;
         mommy.getWorld().addObject(b, spawnX, 0);
         figure[0] = b;        
@@ -61,7 +60,7 @@ public class Figure1 extends Actor {
     
     private void TestBlock2() {
         int[] positions = {5, 5, 5, 5};
-        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions, mommy);
+        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions);
         int spawnX = (mommy.getWorld().getWidth() + blockSize) / 2;
         mommy.getWorld().addObject(b, spawnX - blockSize, 0);
         figure[1] = b;        
@@ -69,7 +68,7 @@ public class Figure1 extends Actor {
     
     private void TestBlock3() {
         int[] positions = {8, 8, 8, 8};
-        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions, mommy);
+        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions);
         int spawnX = (mommy.getWorld().getWidth() + blockSize) / 2;
         mommy.getWorld().addObject(b, spawnX, blockSize);
         figure[2] = b;        
@@ -77,7 +76,7 @@ public class Figure1 extends Actor {
     
     private void TestBlock4() {
         int[] positions = {9, 9, 9, 9};
-        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions, mommy);
+        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions);
         int spawnX = (mommy.getWorld().getWidth() + blockSize) / 2;
         mommy.getWorld().addObject(b, spawnX - blockSize, blockSize);
         figure[3] = b;        

@@ -4,9 +4,7 @@ import greenfoot.Actor;
 import greenfoot.Greenfoot;
 
 public class BlockForFigure extends Actor{
-    //TODO: remove unused stuff
     private int blockSize;
-    private BlockSpawner mommy;
     private int[] midPosition = new int[2];
     
     //Variables for Movement
@@ -21,11 +19,6 @@ public class BlockForFigure extends Actor{
     private int fastSpeed = 2;
     private boolean isSpeedDown = false;
     
-    //Variables to Ignore Blocks
-    boolean ignoreRight = false;
-    boolean ignoreLeft = false;
-    boolean ignoreBelow = false;
-    
     private boolean allowedToTurn = false;
     private int allowedToTurnCounter = 4;
     
@@ -33,10 +26,9 @@ public class BlockForFigure extends Actor{
 
     boolean goToSleep = false;
     
-    public BlockForFigure(int blockSize, int[] startPosition, int[] positionsB, BlockSpawner mommy) {
+    public BlockForFigure(int blockSize, int[] startPosition, int[] positionsB) {
         this.getImage().scale(26, 26);
         this.blockSize = blockSize;
-        this.mommy = mommy;
         this.midPosition = startPosition.clone();
         this.positionsBlock = positionsB.clone();
     }
@@ -86,13 +78,6 @@ public class BlockForFigure extends Actor{
         }
         return blockBelow;
         
-    }
-    
-    public void setIngoreBlocks() {
-        ignoreRight = getObjectsAtOffset(blockSize, 0, BlockForFigure.class).size() > 0;
-        ignoreLeft = getObjectsAtOffset(-blockSize, 0, BlockForFigure.class).size() > 0;
-        ignoreBelow = getObjectsAtOffset(0, blockSize, BlockForFigure.class).size() > 0;
-        //System.out.println("Below: " + ignoreBelow);
     }
     
     public void speedDown() {

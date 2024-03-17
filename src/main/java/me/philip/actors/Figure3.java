@@ -40,7 +40,6 @@ public class Figure3 extends Actor{
         if (checkSides) {
             checkSides = false;
             for (BlockForFigure b : figure) {
-                b.setIngoreBlocks();
                 b.shouldMove = true;
             }
         }
@@ -55,7 +54,7 @@ public class Figure3 extends Actor{
     private void TestBlock() {
         //int[] positions = {0, 0, 0, 8};
         int[] positions = {5, 1, 4, 4};
-        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions, mommy);
+        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions);
         int spawnX = (mommy.getWorld().getWidth() + blockSize) / 2;
         mommy.getWorld().addObject(b, spawnX + blockSize, 0);
         figure[0] = b;        
@@ -64,7 +63,7 @@ public class Figure3 extends Actor{
     private void TestBlock2() {
         //int[] positions = {7, 1, 6, 12};
         int[] positions = {7, 4, 5, 5};
-        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions, mommy);
+        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions);
         int spawnX = (mommy.getWorld().getWidth() + blockSize) / 2;
         mommy.getWorld().addObject(b, spawnX - blockSize, blockSize);
         figure[1] = b;        
@@ -73,7 +72,7 @@ public class Figure3 extends Actor{
     private void TestBlock3() {
         //int[] positions = {0, 0, 9, 0};
         int[] positions = {8, 8, 6, 9};
-        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions, mommy);
+        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions);
         int spawnX = (mommy.getWorld().getWidth() + blockSize) / 2;
         mommy.getWorld().addObject(b, spawnX, blockSize);
         figure[2] = b;        
@@ -82,7 +81,7 @@ public class Figure3 extends Actor{
     private void TestBlock4() {
         //int[] positions = {0, 5, 0, 0};
         int[] positions = {9, 9, 8, 12};
-        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions, mommy);
+        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions);
         int spawnX = (mommy.getWorld().getWidth() + blockSize) / 2;
         System.out.println("spawnX: " + spawnX);
         mommy.getWorld().addObject(b, spawnX + blockSize, blockSize);
