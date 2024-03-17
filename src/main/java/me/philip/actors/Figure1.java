@@ -5,6 +5,7 @@ import greenfoot.Greenfoot;
 import greenfoot.World;
 
 public class Figure1 extends Actor {
+    //TODO: remove unused stuff
     int blockSize;
     BlockSpawner mommy;
     World w;

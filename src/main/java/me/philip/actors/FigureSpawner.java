@@ -4,6 +4,8 @@ import greenfoot.Actor;
 import greenfoot.Greenfoot;
 
 public class FigureSpawner extends Actor{
+    //TODO: nicht random, sondern in nem sack
+    //TODO: noch eine vorschau für den nächsten Block
     int figureCount = 7;
     int blockSize = 26;
     BlockSpawner mommy;

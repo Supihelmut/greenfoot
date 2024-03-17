@@ -4,6 +4,7 @@ import greenfoot.Actor;
 import greenfoot.Greenfoot;
 
 public class BlockForFigure extends Actor{
+    //TODO: remove unused stuff
     private int blockSize;
     private BlockSpawner mommy;
     private int[] midPosition = new int[2];
