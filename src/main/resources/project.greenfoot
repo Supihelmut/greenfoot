@@ -1,6 +1,8 @@
 # Class definitions
 
 class.me.philip.actors.Bean.image=bean.png
+class.me.philip.actors.BlockForFigure.image = Wall.jpg
+class.me.philip.actors.Wall.image = brick.jpg
 
 # Editor Settings
 editor.fx.0.height=0
