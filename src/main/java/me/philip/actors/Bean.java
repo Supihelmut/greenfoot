@@ -1,4 +1,4 @@
-package me.leotuet.actors;
+package me.philip.actors;
 
 import greenfoot.Actor;
 import greenfoot.Greenfoot;

@@ -1,8 +1,8 @@
-package me.leotuet.worlds;
+package me.philip.worlds;
 
 // WARNING: This file is auto-generated and any changes to it will be overwritten
 import greenfoot.World;
-import me.leotuet.actors.Bean;
+import me.philip.actors.Bean;
 
 /**
  * 
