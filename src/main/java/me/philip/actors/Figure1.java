@@ -5,7 +5,7 @@ import greenfoot.Greenfoot;
 import greenfoot.World;
 
 public class Figure1 extends Actor {
-    //TODO: remove unused stuff
+    //IMPORTANT: no method for turning needed
     int blockSize;
     BlockSpawner mommy;
     World w;
@@ -15,9 +15,6 @@ public class Figure1 extends Actor {
     private int maxMoveTimer = 10;
     private boolean endMovement = false;
     private boolean checkSides = true;
-    
-    private int turnTimer = 0;
-    private int maxTurnTimer = 10;
     
     private int startX = 300;
     private int startY;
@@ -45,7 +42,6 @@ public class Figure1 extends Actor {
         checkMovementState();
         if (!endMovement) {
             moveBlockSideways();
-            turnBlock();
             moveBlockFast();
         }
     }
@@ -102,17 +98,6 @@ public class Figure1 extends Actor {
             }
         }
         else if (moveTimer != 0) moveTimer--;
-    }
-    
-    private void turnBlock() {
-        if (Greenfoot.isKeyDown("q") && turnTimer == 0) {
-            //turn left
-            for (BlockForFigure b : figure) {
-                //b.checkLeftTurn(figure);
-            }
-            turnTimer = maxTurnTimer;
-        }
-        else if (turnTimer != 0) turnTimer--;
     }
     
     private void moveBlockFast() {

@@ -12,9 +12,6 @@ public class BlockForFigure extends Actor{
     private int moveTimer = 0;
     private int fallspeed = 20;
     
-    //Variables for SideMovement
-    private int moveSideTimer = 0;
-    
     //Variables vor Speed Block down
     private int fastSpeed = 2;
     private boolean isSpeedDown = false;
@@ -32,19 +29,23 @@ public class BlockForFigure extends Actor{
         this.midPosition = startPosition.clone();
         this.positionsBlock = positionsB.clone();
     }
-    public void act()
-    {
+
+    public void act() {
         if (goToSleep) {
             this.getWorld().removeObject(this);
         }
         if (shouldMove) move();
-        if (!allowedToTurn) allowedToTurnCounter--;
-        if (allowedToTurnCounter == 0) allowedToTurn = true;
+        turn();
     }
     
     private void move() {
         checkBlockMove();
         moveDown();
+    }
+
+    private void turn() {
+        if (!allowedToTurn) allowedToTurnCounter--;
+        if (allowedToTurnCounter == 0) allowedToTurn = true;
     }
     
     private void checkBlockMove() {
