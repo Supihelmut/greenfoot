@@ -4,6 +4,8 @@ import greenfoot.Actor;
 import greenfoot.Greenfoot;
 
 public class Figure extends Actor {
+    //TODO: Add different colors for the Blocks
+
     private int figureNum;
     private int blockNum = 0;
     

@@ -3,8 +3,7 @@ package me.philip.actors;
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
 
-public class FigureSpawner extends Actor{
-    //TODO: noch eine vorschau für den nächsten Block
+public class FigureSpawner extends Actor {
     int figureCount = 7;
     int blockSize = 26;
     BlockSpawner mommy;

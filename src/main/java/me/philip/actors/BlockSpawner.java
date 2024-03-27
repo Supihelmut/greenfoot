@@ -4,8 +4,9 @@ import greenfoot.Actor;
 import greenfoot.Greenfoot;
 
 public class BlockSpawner extends Actor {
-    //Blocks[][] rows = new Blocks[20][10];
-    //int[] rowCounter = new int[20];
+    //TODO: Add a possibility to losse
+    //TODO: Add a score system
+    //TODO: Make the game faster with higher score
     
     BlockForFigure[][] rowsF = new BlockForFigure[20][10];
     int[] rowCounterF = new int[20];
