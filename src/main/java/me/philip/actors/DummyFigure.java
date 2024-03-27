@@ -1,6 +1,7 @@
 package me.philip.actors;
 
 import greenfoot.Actor;
+import greenfoot.Color;
 
 public class DummyFigure extends Actor {
     private int mid = 313;
@@ -60,6 +61,25 @@ public class DummyFigure extends Actor {
         }
     };
 
+    Color yellow = new Color(240, 240, 0, 255);
+    Color turkis = new Color(0, 240, 240, 255);
+    Color blue = new Color(0, 0, 240, 255);
+    Color orange = new Color(240, 160, 0, 255);
+    Color green = new Color(0, 240, 0, 255);
+    Color lila = new Color(160, 0, 240, 255);
+    Color red = new Color(240, 0, 0, 255);
+
+
+    private Color[] colorBlocks = {
+        yellow,
+        lila,
+        orange,
+        blue,
+        red,
+        green,
+        turkis
+    };
+
 
     public DummyFigure(BlockSpawner mommy, int figure) {
         this.mommy = mommy;
@@ -87,6 +107,7 @@ public class DummyFigure extends Actor {
             int[] coords = blockCoords[figure][i];
             DummyBlock d = new DummyBlock(mommy);
             mommy.getWorld().addObject(d, coords[0] + offsetX + extraOffsetX, coords[1] + offsetY + extraOffsetY);
+            d.setColor(colorBlocks[figure]);
             dummy[i] = d;
         }
     }

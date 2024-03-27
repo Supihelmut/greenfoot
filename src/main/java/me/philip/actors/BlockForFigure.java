@@ -1,6 +1,7 @@
 package me.philip.actors;
 
 import greenfoot.Actor;
+import greenfoot.Color;
 import greenfoot.Greenfoot;
 
 public class BlockForFigure extends Actor{
@@ -225,5 +226,11 @@ public class BlockForFigure extends Actor{
                 break;
         }
         return outPos;
+    }
+
+    public void setColor(Color color) {
+        System.out.println("Color");
+        this.getImage().setColor(color);
+        this.getImage().fill();
     }
 }

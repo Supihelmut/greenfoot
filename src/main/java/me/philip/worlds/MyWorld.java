@@ -1,5 +1,7 @@
 package me.philip.worlds;
 
+import greenfoot.Color;
+import greenfoot.GreenfootImage;
 // WARNING: This file is auto-generated and any changes to it will be overwritten
 import greenfoot.World;
 import me.philip.actors.BackgroundPreview;
@@ -12,11 +14,20 @@ import me.philip.actors.Wall;
  */
 public class MyWorld extends World {
 
+    
+
 	public MyWorld() {
 		// Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 500, 1); 
         FigureSpawner FSpawn = new FigureSpawner();
         addObject(FSpawn, 0, 0);
+
+        Color darkGrey = new Color(20, 20, 20);
+
+        GreenfootImage image = new GreenfootImage(getBackground());
+        image.setColor(darkGrey);
+        image.fill();
+        setBackground(image);
         
         BlockSpawner b = new BlockSpawner(FSpawn);
         addObject(b, 0, 0);
