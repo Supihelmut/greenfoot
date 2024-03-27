@@ -5,7 +5,9 @@ import greenfoot.Color;
 import greenfoot.Greenfoot;
 
 public class Figure extends Actor {
-    //TODO: Add different colors for the Blocks
+    //TODO: Bring back the Form for the Blocks 
+    //TODO: Rework that the block dont stuck in the ground
+    
 
     private int figureNum;
     private int blockNum = 0;
