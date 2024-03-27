@@ -117,10 +117,10 @@ public class Figure extends Actor {
         },
         //Figure 6 Coords
         {
-            {mid + (2 * blockSize), 0},
-            {mid + blockSize, 0},
-            {mid + blockSize, blockSize},
-            {mid, blockSize}
+            {mid, 0},
+            {mid - blockSize, 0},
+            {mid - blockSize, blockSize},
+            {mid - (2 * blockSize), blockSize}
         },
         //Figure 7 Coords
         {
@@ -137,9 +137,7 @@ public class Figure extends Actor {
         this.startY = blockSize/2;
         startPos[0] = startX;
         startPos[1] = startY;
-        for (int i = 0; i < 4; i++) {
-            createBlock();
-        }
+        createBlock();
     }
 
     public void act() {
@@ -152,18 +150,20 @@ public class Figure extends Actor {
         checkMovementState();
         if (!endMovement) {
             moveBlockSideways();
-            inputTurnBlock();
+             inputTurnBlock();
             moveBlockFast();
         }
     }
 
-    private void createBlock() {
-        int[] positions = blockValues[figureNum][blockNum];
-        int[] coords = blockCoords[figureNum][blockNum];
-        BlockForFigure b = new BlockForFigure(blockSize, startPos, positions);
-        mommy.getWorld().addObject(b, coords[0], coords[1]);
-        figure[blockNum] = b;
-        blockNum++;
+    public void createBlock() {
+        for (int i = 0; i < 4; i++) {
+            int[] positions = blockValues[figureNum][blockNum];
+            int[] coords = blockCoords[figureNum][blockNum];
+            BlockForFigure b = new BlockForFigure(blockSize, startPos, positions);
+            mommy.getWorld().addObject(b, coords[0], coords[1]);
+            figure[blockNum] = b;
+            blockNum++;
+        }
     }
 
     private void moveBlockSideways() {

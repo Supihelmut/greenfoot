@@ -8,7 +8,7 @@ public class BlockForFigure extends Actor{
     private int[] midPosition = new int[2];
     
     //Variables for Movement
-    public boolean shouldMove = false;
+    public boolean shouldMove = true;
     private int moveTimer = 0;
     private int fallspeed = 20;
     
@@ -151,7 +151,6 @@ public class BlockForFigure extends Actor{
         try {
             BlockForFigure b = (BlockForFigure) getOneObjectAtOffset(nextBlockPos[0],nextBlockPos[1], BlockForFigure.class);
             if (b == null) {
-                System.out.println("NULL");
                 return false;
             }
             if (b.shouldMove) return true;
