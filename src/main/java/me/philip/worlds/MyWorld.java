@@ -2,6 +2,7 @@ package me.philip.worlds;
 
 // WARNING: This file is auto-generated and any changes to it will be overwritten
 import greenfoot.World;
+import me.philip.actors.BackgroundPreview;
 import me.philip.actors.BlockSpawner;
 import me.philip.actors.FigureSpawner;
 import me.philip.actors.Wall;
@@ -22,11 +23,14 @@ public class MyWorld extends World {
         
         Wall wallright = new Wall(true, 26, 10);
         Wall wallleft = new Wall(false, 26, 10);
+        BackgroundPreview bPreview = new BackgroundPreview();
         
         addObject(wallright, 0, 0);
         addObject(wallleft, 0, 0);
+        addObject(bPreview, 0, 0);
         
         wallright.generateWall();
         wallleft.generateWall();
+        bPreview.moveToPlace();
 	}
 }

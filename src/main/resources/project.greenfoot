@@ -2,7 +2,9 @@
 
 class.me.philip.actors.Bean.image=bean.png
 class.me.philip.actors.BlockForFigure.image = Wall.jpg
+class.me.philip.actors.DummyBlock.image = Wall.jpg
 class.me.philip.actors.Wall.image = brick.jpg
+class.me.philip.actors.BackgroundPreview.image = piecePreview.png
 
 # Editor Settings
 editor.fx.0.height=0
