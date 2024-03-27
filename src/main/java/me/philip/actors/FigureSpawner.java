@@ -34,6 +34,9 @@ public class FigureSpawner extends Actor{
     }
     
     private void spawnFigure(int figure) {
+        Figure f = new Figure(figure, mommy);
+        this.getWorld().addObject(f, 0, 0);
+        /* 
         switch (figure) {
             case 0:
                 //System.out.println("Figure 1");
@@ -65,5 +68,6 @@ public class FigureSpawner extends Actor{
                 this.getWorld().addObject(f7, 0, 0);
                 break;
         }
+        */
     }
 }
